@@ -10,12 +10,12 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 
 let mongod;
 let app; // will import after setting MONGO_URI
-const User = require('../models/User');
-const Course = require('../models/Course');
-const Session = require('../models/Session');
-const QrToken = require('../models/QrToken');
-const Attendance = require('../models/Attendance');
-const AttemptLog = require('../models/AttemptLog');
+const User = require('../src/models/User');
+const Course = require('../src/models/Course');
+const Session = require('../src/models/Session');
+const QrToken = require('../src/models/QrToken');
+const Attendance = require('../src/models/Attendance');
+const AttemptLog = require('../src/models/AttemptLog');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
