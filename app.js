@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const authRoutes = require('./routes/auth');
+const sessionsRoutes = require('./routes/sessions');
+const attendanceRoutes = require('./routes/attendance');
 
 const User = require('./models/User');
 
@@ -21,15 +23,15 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   })
   .catch(err => {
     console.error('Mongo connect error', err);
-    process.exit(1);
   });
 
 app.use('/auth', authRoutes);
+app.use('/sessions', sessionsRoutes);
+app.use('/attendance', attendanceRoutes);
 
 app.get('/', (req,res) => res.json({ ok:true }));
 
-const port = process.env.PORT || 3000;
-app.listen(port, ()=> console.log(`Server started on port ${port}`));
+module.exports = app;
 
 // Seed admin from env on first run
 async function seedAdmin() {

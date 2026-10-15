@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "NODE_ENV=development nodemon app.js",
-    "test": "jest"
+    "start": "node server.js",
+    "dev": "NODE_ENV=development nodemon server.js",
+    "test": "jest --runInBand --detectOpenHandles"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
